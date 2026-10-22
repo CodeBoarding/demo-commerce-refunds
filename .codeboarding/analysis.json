@@ -1,0 +1,1140 @@
+{
+  "metadata": {
+    "generated_at": "2026-10-22T13:31:35.370595+00:00",
+    "source_tree_hash": "22d1b73667aaacd91b41326ba0e55acb885599bb7f897b5c1d6efc6980f8b23a",
+    "repo_name": ".codeboarding-target",
+    "depth_level": 1,
+    "depth_cap": 2,
+    "file_coverage_summary": {
+      "total_files": 16,
+      "analyzed": 13,
+      "not_analyzed": 3,
+      "not_analyzed_by_reason": {
+        "other": 2,
+        "codeboardingignore": 1
+      }
+    },
+    "tree_spec": {
+      "version": 4,
+      "grouper": "affinity",
+      "machinery": [],
+      "scopes": {
+        "root": {
+          "axis": "structural",
+          "rung": "frontier",
+          "leaf_reason": "",
+          "last_id": 3,
+          "rules": [
+            {
+              "id": "1",
+              "name": "services",
+              "origin": "box",
+              "prefixes": [
+                [
+                  "services"
+                ]
+              ]
+            },
+            {
+              "id": "2",
+              "name": "Loose files",
+              "origin": "loose",
+              "fallback_prefixes": [
+                []
+              ]
+            },
+            {
+              "id": "3",
+              "name": "apps",
+              "origin": "box",
+              "prefixes": [
+                [
+                  "apps"
+                ]
+              ]
+            }
+          ]
+        },
+        "1": {
+          "axis": "",
+          "rung": "leaf",
+          "leaf_reason": "small: 7 units, at most 7; nothing to un-merge",
+          "last_id": 0,
+          "rules": []
+        },
+        "2": {
+          "axis": "",
+          "rung": "leaf",
+          "leaf_reason": "small: 3 units, at most 7; nothing to un-merge",
+          "last_id": 0,
+          "rules": []
+        },
+        "3": {
+          "axis": "",
+          "rung": "leaf",
+          "leaf_reason": "small: 3 units, at most 7; nothing to un-merge",
+          "last_id": 0,
+          "rules": []
+        }
+      }
+    }
+  },
+  "description": "Root architecture of the commerce platform, orchestrating client application interfaces and backend services via an application bootstrap module and shared currency utilities.",
+  "files": {
+    "services/checkout/checkout-api.js": {
+      "method_keys": [
+        "services/checkout/checkout-api.js|services.checkout.checkout-api.CheckoutApi",
+        "services/checkout/checkout-api.js|services.checkout.checkout-api.CheckoutApi.constructor",
+        "services/checkout/checkout-api.js|services.checkout.checkout-api.CheckoutApi.requestRefund",
+        "services/checkout/checkout-api.js|services.checkout.checkout-api.CheckoutApi.accountSummary",
+        "services/checkout/checkout-api.js|services.checkout.checkout-api.CheckoutApi.accountSummary.orders.filter() callback",
+        "services/checkout/checkout-api.js|services.checkout.checkout-api.accountSummary.orders",
+        "services/checkout/checkout-api.js|services.checkout.checkout-api.CheckoutApi.accountSummary.cardRefunds.orders.flatMap() callback",
+        "services/checkout/checkout-api.js|services.checkout.checkout-api.accountSummary.cardRefunds"
+      ],
+      "content_hash": "ae2dc8c3c6cb4015",
+      "module_hash": "e3b0c44298fc1c14"
+    },
+    "services/notifications/notification-service.js": {
+      "method_keys": [
+        "services/notifications/notification-service.js|services.notifications.notification-service.NotificationService",
+        "services/notifications/notification-service.js|services.notifications.notification-service.NotificationService.sendRefundReceipt",
+        "services/notifications/notification-service.js|services.notifications.notification-service.NotificationService.list",
+        "services/notifications/notification-service.js|services.notifications.notification-service.NotificationService.list.#messages.map() callback"
+      ],
+      "content_hash": "f6611b765ce0ea80",
+      "module_hash": "594c61e2811d52fa"
+    },
+    "services/orders/order-repository.js": {
+      "method_keys": [
+        "services/orders/order-repository.js|services.orders.order-repository.OrderRepository",
+        "services/orders/order-repository.js|services.orders.order-repository.OrderRepository.add",
+        "services/orders/order-repository.js|services.orders.order-repository.OrderRepository.get",
+        "services/orders/order-repository.js|services.orders.order-repository.OrderRepository.recordRefund",
+        "services/orders/order-repository.js|services.orders.order-repository.OrderRepository.list",
+        "services/orders/order-repository.js|services.orders.order-repository.OrderRepository.list.map() callback"
+      ],
+      "content_hash": "cc129582085652a9",
+      "module_hash": "e3b0c44298fc1c14"
+    },
+    "services/payments/card-gateway.js": {
+      "method_keys": [
+        "services/payments/card-gateway.js|services.payments.card-gateway.CardGateway",
+        "services/payments/card-gateway.js|services.payments.card-gateway.CardGateway.reverseCharge",
+        "services/payments/card-gateway.js|services.payments.card-gateway.CardGateway.listReversals",
+        "services/payments/card-gateway.js|services.payments.card-gateway.CardGateway.listReversals.map() callback"
+      ],
+      "content_hash": "43e906b69e2a8a63",
+      "module_hash": "6914c2ff79636717"
+    },
+    "services/payments/payment-service.js": {
+      "method_keys": [
+        "services/payments/payment-service.js|services.payments.payment-service.PaymentService",
+        "services/payments/payment-service.js|services.payments.payment-service.PaymentService.constructor",
+        "services/payments/payment-service.js|services.payments.payment-service.PaymentService.refundOriginalPayment",
+        "services/payments/payment-service.js|services.payments.payment-service.PaymentService.refundsForOrder",
+        "services/payments/payment-service.js|services.payments.payment-service.PaymentService.refundsForOrder.filter() callback"
+      ],
+      "content_hash": "5ef8703a4d1138d7",
+      "module_hash": "e3b0c44298fc1c14"
+    },
+    "services/refunds/refund-policy.js": {
+      "method_keys": [
+        "services/refunds/refund-policy.js|services.refunds.refund-policy.RefundPolicy",
+        "services/refunds/refund-policy.js|services.refunds.refund-policy.RefundPolicy.validate"
+      ],
+      "content_hash": "3deb3e88029b242e",
+      "module_hash": "868c5f19f15e32af"
+    },
+    "services/refunds/refund-service.js": {
+      "method_keys": [
+        "services/refunds/refund-service.js|services.refunds.refund-service.RefundService",
+        "services/refunds/refund-service.js|services.refunds.refund-service.RefundService.constructor",
+        "services/refunds/refund-service.js|services.refunds.refund-service.RefundService.issueRefund"
+      ],
+      "content_hash": "9bfe80b47e187e17",
+      "module_hash": "e3b0c44298fc1c14"
+    },
+    "app.js": {
+      "method_keys": [
+        "app.js|app.createCommerce"
+      ],
+      "content_hash": "6f1618cef74bc375",
+      "module_hash": "a9f85d8ac8a25f16"
+    },
+    "packages/money/money.js": {
+      "method_keys": [
+        "packages/money/money.js|packages.money.money.assertAmount",
+        "packages/money/money.js|packages.money.money.formatMoney"
+      ],
+      "content_hash": "8405beff368285ed",
+      "module_hash": "e3b0c44298fc1c14"
+    },
+    "apps/finance/reconciliation.js": {
+      "method_keys": [
+        "apps/finance/reconciliation.js|apps.finance.reconciliation.FinanceExport",
+        "apps/finance/reconciliation.js|apps.finance.reconciliation.FinanceExport.constructor",
+        "apps/finance/reconciliation.js|apps.finance.reconciliation.FinanceExport.reconcile",
+        "apps/finance/reconciliation.js|apps.finance.reconciliation.FinanceExport.reconcile.map() callback",
+        "apps/finance/reconciliation.js|apps.finance.reconciliation.FinanceExport.reconcile.map() callback.cardAmount",
+        "apps/finance/reconciliation.js|apps.finance.reconciliation.FinanceExport.reconcile.map() callback.cardAmount.reduce() callback"
+      ],
+      "content_hash": "7cf92e406d2f1e43",
+      "module_hash": "e3b0c44298fc1c14"
+    },
+    "apps/storefront/account-page.js": {
+      "method_keys": [
+        "apps/storefront/account-page.js|apps.storefront.account-page.StorefrontAccount",
+        "apps/storefront/account-page.js|apps.storefront.account-page.StorefrontAccount.constructor",
+        "apps/storefront/account-page.js|apps.storefront.account-page.StorefrontAccount.refundOrder",
+        "apps/storefront/account-page.js|apps.storefront.account-page.StorefrontAccount.renderBalance"
+      ],
+      "content_hash": "4fc987669c117ddb",
+      "module_hash": "948060fc28badd46"
+    },
+    "apps/support/refund-console.js": {
+      "method_keys": [
+        "apps/support/refund-console.js|apps.support.refund-console.SupportConsole",
+        "apps/support/refund-console.js|apps.support.refund-console.SupportConsole.constructor",
+        "apps/support/refund-console.js|apps.support.refund-console.SupportConsole.issueGoodwillRefund"
+      ],
+      "content_hash": "41da3190ae226ef5",
+      "module_hash": "e3b0c44298fc1c14"
+    }
+  },
+  "methods_index": {
+    "services/checkout/checkout-api.js|services.checkout.checkout-api.CheckoutApi": {
+      "file_path": "services/checkout/checkout-api.js",
+      "qualified_name": "services.checkout.checkout-api.CheckoutApi",
+      "start_line": 1,
+      "end_line": 15,
+      "type": "CLASS",
+      "content_hash": "ae2dc8c3c6cb4015"
+    },
+    "services/checkout/checkout-api.js|services.checkout.checkout-api.CheckoutApi.constructor": {
+      "file_path": "services/checkout/checkout-api.js",
+      "qualified_name": "services.checkout.checkout-api.CheckoutApi.constructor",
+      "start_line": 2,
+      "end_line": 2,
+      "type": "CONSTRUCTOR",
+      "content_hash": "c283ba47c76ecfd4"
+    },
+    "services/checkout/checkout-api.js|services.checkout.checkout-api.CheckoutApi.requestRefund": {
+      "file_path": "services/checkout/checkout-api.js",
+      "qualified_name": "services.checkout.checkout-api.CheckoutApi.requestRefund",
+      "start_line": 4,
+      "end_line": 8,
+      "type": "METHOD",
+      "content_hash": "d07fa774104afd0a"
+    },
+    "services/checkout/checkout-api.js|services.checkout.checkout-api.CheckoutApi.accountSummary": {
+      "file_path": "services/checkout/checkout-api.js",
+      "qualified_name": "services.checkout.checkout-api.CheckoutApi.accountSummary",
+      "start_line": 10,
+      "end_line": 14,
+      "type": "METHOD",
+      "content_hash": "1f2ac27ae8f164f1"
+    },
+    "services/checkout/checkout-api.js|services.checkout.checkout-api.CheckoutApi.accountSummary.orders.filter() callback": {
+      "file_path": "services/checkout/checkout-api.js",
+      "qualified_name": "services.checkout.checkout-api.CheckoutApi.accountSummary.orders.filter() callback",
+      "start_line": 11,
+      "end_line": 11,
+      "type": "FUNCTION",
+      "content_hash": "596755a021877551"
+    },
+    "services/checkout/checkout-api.js|services.checkout.checkout-api.accountSummary.orders": {
+      "file_path": "services/checkout/checkout-api.js",
+      "qualified_name": "services.checkout.checkout-api.accountSummary.orders",
+      "start_line": 11,
+      "end_line": 11,
+      "type": "CLASS",
+      "content_hash": "596755a021877551"
+    },
+    "services/checkout/checkout-api.js|services.checkout.checkout-api.CheckoutApi.accountSummary.cardRefunds.orders.flatMap() callback": {
+      "file_path": "services/checkout/checkout-api.js",
+      "qualified_name": "services.checkout.checkout-api.CheckoutApi.accountSummary.cardRefunds.orders.flatMap() callback",
+      "start_line": 12,
+      "end_line": 12,
+      "type": "FUNCTION",
+      "content_hash": "bbe794bf7e10ef38"
+    },
+    "services/checkout/checkout-api.js|services.checkout.checkout-api.accountSummary.cardRefunds": {
+      "file_path": "services/checkout/checkout-api.js",
+      "qualified_name": "services.checkout.checkout-api.accountSummary.cardRefunds",
+      "start_line": 12,
+      "end_line": 12,
+      "type": "CLASS",
+      "content_hash": "bbe794bf7e10ef38"
+    },
+    "services/notifications/notification-service.js|services.notifications.notification-service.NotificationService": {
+      "file_path": "services/notifications/notification-service.js",
+      "qualified_name": "services.notifications.notification-service.NotificationService",
+      "start_line": 3,
+      "end_line": 16,
+      "type": "CLASS",
+      "content_hash": "f6e09f0978a9818c"
+    },
+    "services/notifications/notification-service.js|services.notifications.notification-service.NotificationService.sendRefundReceipt": {
+      "file_path": "services/notifications/notification-service.js",
+      "qualified_name": "services.notifications.notification-service.NotificationService.sendRefundReceipt",
+      "start_line": 6,
+      "end_line": 13,
+      "type": "METHOD",
+      "content_hash": "98f0d08f6150f6f2"
+    },
+    "services/notifications/notification-service.js|services.notifications.notification-service.NotificationService.list": {
+      "file_path": "services/notifications/notification-service.js",
+      "qualified_name": "services.notifications.notification-service.NotificationService.list",
+      "start_line": 15,
+      "end_line": 15,
+      "type": "METHOD",
+      "content_hash": "f0a17716b1659f63"
+    },
+    "services/notifications/notification-service.js|services.notifications.notification-service.NotificationService.list.#messages.map() callback": {
+      "file_path": "services/notifications/notification-service.js",
+      "qualified_name": "services.notifications.notification-service.NotificationService.list.#messages.map() callback",
+      "start_line": 15,
+      "end_line": 15,
+      "type": "FUNCTION",
+      "content_hash": "f0a17716b1659f63"
+    },
+    "services/orders/order-repository.js|services.orders.order-repository.OrderRepository": {
+      "file_path": "services/orders/order-repository.js",
+      "qualified_name": "services.orders.order-repository.OrderRepository",
+      "start_line": 1,
+      "end_line": 26,
+      "type": "CLASS",
+      "content_hash": "cc129582085652a9"
+    },
+    "services/orders/order-repository.js|services.orders.order-repository.OrderRepository.add": {
+      "file_path": "services/orders/order-repository.js",
+      "qualified_name": "services.orders.order-repository.OrderRepository.add",
+      "start_line": 4,
+      "end_line": 7,
+      "type": "METHOD",
+      "content_hash": "5b9a813439cfbe8a"
+    },
+    "services/orders/order-repository.js|services.orders.order-repository.OrderRepository.get": {
+      "file_path": "services/orders/order-repository.js",
+      "qualified_name": "services.orders.order-repository.OrderRepository.get",
+      "start_line": 9,
+      "end_line": 13,
+      "type": "METHOD",
+      "content_hash": "8fffbdf891caa705"
+    },
+    "services/orders/order-repository.js|services.orders.order-repository.OrderRepository.recordRefund": {
+      "file_path": "services/orders/order-repository.js",
+      "qualified_name": "services.orders.order-repository.OrderRepository.recordRefund",
+      "start_line": 15,
+      "end_line": 23,
+      "type": "METHOD",
+      "content_hash": "3999bcade6c04f04"
+    },
+    "services/orders/order-repository.js|services.orders.order-repository.OrderRepository.list": {
+      "file_path": "services/orders/order-repository.js",
+      "qualified_name": "services.orders.order-repository.OrderRepository.list",
+      "start_line": 25,
+      "end_line": 25,
+      "type": "METHOD",
+      "content_hash": "40ceea69c243bbc8"
+    },
+    "services/orders/order-repository.js|services.orders.order-repository.OrderRepository.list.map() callback": {
+      "file_path": "services/orders/order-repository.js",
+      "qualified_name": "services.orders.order-repository.OrderRepository.list.map() callback",
+      "start_line": 25,
+      "end_line": 25,
+      "type": "FUNCTION",
+      "content_hash": "40ceea69c243bbc8"
+    },
+    "services/payments/card-gateway.js|services.payments.card-gateway.CardGateway": {
+      "file_path": "services/payments/card-gateway.js",
+      "qualified_name": "services.payments.card-gateway.CardGateway",
+      "start_line": 4,
+      "end_line": 22,
+      "type": "CLASS",
+      "content_hash": "62081860266f1d7c"
+    },
+    "services/payments/card-gateway.js|services.payments.card-gateway.CardGateway.reverseCharge": {
+      "file_path": "services/payments/card-gateway.js",
+      "qualified_name": "services.payments.card-gateway.CardGateway.reverseCharge",
+      "start_line": 7,
+      "end_line": 19,
+      "type": "METHOD",
+      "content_hash": "764f243bdc7cec79"
+    },
+    "services/payments/card-gateway.js|services.payments.card-gateway.CardGateway.listReversals": {
+      "file_path": "services/payments/card-gateway.js",
+      "qualified_name": "services.payments.card-gateway.CardGateway.listReversals",
+      "start_line": 21,
+      "end_line": 21,
+      "type": "METHOD",
+      "content_hash": "7a9516ef3a40390c"
+    },
+    "services/payments/card-gateway.js|services.payments.card-gateway.CardGateway.listReversals.map() callback": {
+      "file_path": "services/payments/card-gateway.js",
+      "qualified_name": "services.payments.card-gateway.CardGateway.listReversals.map() callback",
+      "start_line": 21,
+      "end_line": 21,
+      "type": "FUNCTION",
+      "content_hash": "7a9516ef3a40390c"
+    },
+    "services/payments/payment-service.js|services.payments.payment-service.PaymentService": {
+      "file_path": "services/payments/payment-service.js",
+      "qualified_name": "services.payments.payment-service.PaymentService",
+      "start_line": 1,
+      "end_line": 11,
+      "type": "CLASS",
+      "content_hash": "5ef8703a4d1138d7"
+    },
+    "services/payments/payment-service.js|services.payments.payment-service.PaymentService.constructor": {
+      "file_path": "services/payments/payment-service.js",
+      "qualified_name": "services.payments.payment-service.PaymentService.constructor",
+      "start_line": 2,
+      "end_line": 2,
+      "type": "CONSTRUCTOR",
+      "content_hash": "f2312442487c3a95"
+    },
+    "services/payments/payment-service.js|services.payments.payment-service.PaymentService.refundOriginalPayment": {
+      "file_path": "services/payments/payment-service.js",
+      "qualified_name": "services.payments.payment-service.PaymentService.refundOriginalPayment",
+      "start_line": 4,
+      "end_line": 6,
+      "type": "METHOD",
+      "content_hash": "0a8112d86453fdf5"
+    },
+    "services/payments/payment-service.js|services.payments.payment-service.PaymentService.refundsForOrder": {
+      "file_path": "services/payments/payment-service.js",
+      "qualified_name": "services.payments.payment-service.PaymentService.refundsForOrder",
+      "start_line": 8,
+      "end_line": 10,
+      "type": "METHOD",
+      "content_hash": "98e13fcac77674e5"
+    },
+    "services/payments/payment-service.js|services.payments.payment-service.PaymentService.refundsForOrder.filter() callback": {
+      "file_path": "services/payments/payment-service.js",
+      "qualified_name": "services.payments.payment-service.PaymentService.refundsForOrder.filter() callback",
+      "start_line": 9,
+      "end_line": 9,
+      "type": "FUNCTION",
+      "content_hash": "779e1a92d124424f"
+    },
+    "services/refunds/refund-policy.js|services.refunds.refund-policy.RefundPolicy": {
+      "file_path": "services/refunds/refund-policy.js",
+      "qualified_name": "services.refunds.refund-policy.RefundPolicy",
+      "start_line": 3,
+      "end_line": 9,
+      "type": "CLASS",
+      "content_hash": "2dae05730722bcce"
+    },
+    "services/refunds/refund-policy.js|services.refunds.refund-policy.RefundPolicy.validate": {
+      "file_path": "services/refunds/refund-policy.js",
+      "qualified_name": "services.refunds.refund-policy.RefundPolicy.validate",
+      "start_line": 4,
+      "end_line": 8,
+      "type": "METHOD",
+      "content_hash": "55a9664d92398a3e"
+    },
+    "services/refunds/refund-service.js|services.refunds.refund-service.RefundService": {
+      "file_path": "services/refunds/refund-service.js",
+      "qualified_name": "services.refunds.refund-service.RefundService",
+      "start_line": 1,
+      "end_line": 24,
+      "type": "CLASS",
+      "content_hash": "9bfe80b47e187e17"
+    },
+    "services/refunds/refund-service.js|services.refunds.refund-service.RefundService.constructor": {
+      "file_path": "services/refunds/refund-service.js",
+      "qualified_name": "services.refunds.refund-service.RefundService.constructor",
+      "start_line": 4,
+      "end_line": 6,
+      "type": "CONSTRUCTOR",
+      "content_hash": "3bbbe25fc918c42c"
+    },
+    "services/refunds/refund-service.js|services.refunds.refund-service.RefundService.issueRefund": {
+      "file_path": "services/refunds/refund-service.js",
+      "qualified_name": "services.refunds.refund-service.RefundService.issueRefund",
+      "start_line": 8,
+      "end_line": 23,
+      "type": "METHOD",
+      "content_hash": "1d79d9bc883a87a6"
+    },
+    "app.js|app.createCommerce": {
+      "file_path": "app.js",
+      "qualified_name": "app.createCommerce",
+      "start_line": 12,
+      "end_line": 23,
+      "type": "FUNCTION",
+      "content_hash": "86a399fb97745425"
+    },
+    "packages/money/money.js|packages.money.money.assertAmount": {
+      "file_path": "packages/money/money.js",
+      "qualified_name": "packages.money.money.assertAmount",
+      "start_line": 1,
+      "end_line": 5,
+      "type": "FUNCTION",
+      "content_hash": "a97d3447c6a4ff16"
+    },
+    "packages/money/money.js|packages.money.money.formatMoney": {
+      "file_path": "packages/money/money.js",
+      "qualified_name": "packages.money.money.formatMoney",
+      "start_line": 7,
+      "end_line": 9,
+      "type": "FUNCTION",
+      "content_hash": "1a7f987616d903de"
+    },
+    "apps/finance/reconciliation.js|apps.finance.reconciliation.FinanceExport": {
+      "file_path": "apps/finance/reconciliation.js",
+      "qualified_name": "apps.finance.reconciliation.FinanceExport",
+      "start_line": 1,
+      "end_line": 10,
+      "type": "CLASS",
+      "content_hash": "7cf92e406d2f1e43"
+    },
+    "apps/finance/reconciliation.js|apps.finance.reconciliation.FinanceExport.constructor": {
+      "file_path": "apps/finance/reconciliation.js",
+      "qualified_name": "apps.finance.reconciliation.FinanceExport.constructor",
+      "start_line": 2,
+      "end_line": 2,
+      "type": "CONSTRUCTOR",
+      "content_hash": "9ad9d6e9bc789062"
+    },
+    "apps/finance/reconciliation.js|apps.finance.reconciliation.FinanceExport.reconcile": {
+      "file_path": "apps/finance/reconciliation.js",
+      "qualified_name": "apps.finance.reconciliation.FinanceExport.reconcile",
+      "start_line": 4,
+      "end_line": 9,
+      "type": "METHOD",
+      "content_hash": "642eeb8ee7c1a399"
+    },
+    "apps/finance/reconciliation.js|apps.finance.reconciliation.FinanceExport.reconcile.map() callback": {
+      "file_path": "apps/finance/reconciliation.js",
+      "qualified_name": "apps.finance.reconciliation.FinanceExport.reconcile.map() callback",
+      "start_line": 5,
+      "end_line": 8,
+      "type": "FUNCTION",
+      "content_hash": "9120fc17ccd443dc"
+    },
+    "apps/finance/reconciliation.js|apps.finance.reconciliation.FinanceExport.reconcile.map() callback.cardAmount": {
+      "file_path": "apps/finance/reconciliation.js",
+      "qualified_name": "apps.finance.reconciliation.FinanceExport.reconcile.map() callback.cardAmount",
+      "start_line": 6,
+      "end_line": 6,
+      "type": "CLASS",
+      "content_hash": "aeaa62924c67b3bd"
+    },
+    "apps/finance/reconciliation.js|apps.finance.reconciliation.FinanceExport.reconcile.map() callback.cardAmount.reduce() callback": {
+      "file_path": "apps/finance/reconciliation.js",
+      "qualified_name": "apps.finance.reconciliation.FinanceExport.reconcile.map() callback.cardAmount.reduce() callback",
+      "start_line": 6,
+      "end_line": 6,
+      "type": "FUNCTION",
+      "content_hash": "aeaa62924c67b3bd"
+    },
+    "apps/storefront/account-page.js|apps.storefront.account-page.StorefrontAccount": {
+      "file_path": "apps/storefront/account-page.js",
+      "qualified_name": "apps.storefront.account-page.StorefrontAccount",
+      "start_line": 4,
+      "end_line": 15,
+      "type": "CLASS",
+      "content_hash": "863a389ca0ac23ab"
+    },
+    "apps/storefront/account-page.js|apps.storefront.account-page.StorefrontAccount.constructor": {
+      "file_path": "apps/storefront/account-page.js",
+      "qualified_name": "apps.storefront.account-page.StorefrontAccount.constructor",
+      "start_line": 5,
+      "end_line": 5,
+      "type": "CONSTRUCTOR",
+      "content_hash": "582597d6d1a3f06f"
+    },
+    "apps/storefront/account-page.js|apps.storefront.account-page.StorefrontAccount.refundOrder": {
+      "file_path": "apps/storefront/account-page.js",
+      "qualified_name": "apps.storefront.account-page.StorefrontAccount.refundOrder",
+      "start_line": 7,
+      "end_line": 9,
+      "type": "METHOD",
+      "content_hash": "f441c297258a4291"
+    },
+    "apps/storefront/account-page.js|apps.storefront.account-page.StorefrontAccount.renderBalance": {
+      "file_path": "apps/storefront/account-page.js",
+      "qualified_name": "apps.storefront.account-page.StorefrontAccount.renderBalance",
+      "start_line": 11,
+      "end_line": 14,
+      "type": "METHOD",
+      "content_hash": "4abb3037c0ab1cb2"
+    },
+    "apps/support/refund-console.js|apps.support.refund-console.SupportConsole": {
+      "file_path": "apps/support/refund-console.js",
+      "qualified_name": "apps.support.refund-console.SupportConsole",
+      "start_line": 1,
+      "end_line": 7,
+      "type": "CLASS",
+      "content_hash": "41da3190ae226ef5"
+    },
+    "apps/support/refund-console.js|apps.support.refund-console.SupportConsole.constructor": {
+      "file_path": "apps/support/refund-console.js",
+      "qualified_name": "apps.support.refund-console.SupportConsole.constructor",
+      "start_line": 2,
+      "end_line": 2,
+      "type": "CONSTRUCTOR",
+      "content_hash": "8737f695586a5787"
+    },
+    "apps/support/refund-console.js|apps.support.refund-console.SupportConsole.issueGoodwillRefund": {
+      "file_path": "apps/support/refund-console.js",
+      "qualified_name": "apps.support.refund-console.SupportConsole.issueGoodwillRefund",
+      "start_line": 4,
+      "end_line": 6,
+      "type": "METHOD",
+      "content_hash": "1f7fa262fea45af3"
+    }
+  },
+  "components": [
+    {
+      "name": "Core Commerce Services",
+      "description": "Provides core business domain services for checkout, orders, payments, refunds, and customer notifications.",
+      "key_entities": [
+        {
+          "qualified_name": "services.checkout.checkout-api.CheckoutApi",
+          "reference_file": "services/checkout/checkout-api.js",
+          "reference_start_line": 1,
+          "reference_end_line": 15
+        },
+        {
+          "qualified_name": "services.orders.order-repository.OrderRepository",
+          "reference_file": "services/orders/order-repository.js",
+          "reference_start_line": 1,
+          "reference_end_line": 26
+        },
+        {
+          "qualified_name": "services.payments.payment-service.PaymentService",
+          "reference_file": "services/payments/payment-service.js",
+          "reference_start_line": 1,
+          "reference_end_line": 11
+        },
+        {
+          "qualified_name": "services.refunds.refund-service.RefundService",
+          "reference_file": "services/refunds/refund-service.js",
+          "reference_start_line": 1,
+          "reference_end_line": 24
+        },
+        {
+          "qualified_name": "services.notifications.notification-service.NotificationService",
+          "reference_file": "services/notifications/notification-service.js",
+          "reference_start_line": 3,
+          "reference_end_line": 16
+        }
+      ],
+      "source_cluster_ids": [
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "file_methods": [
+        {
+          "file_path": "services/checkout/checkout-api.js",
+          "methods": [
+            "services.checkout.checkout-api.CheckoutApi",
+            "services.checkout.checkout-api.CheckoutApi.constructor",
+            "services.checkout.checkout-api.CheckoutApi.requestRefund",
+            "services.checkout.checkout-api.CheckoutApi.accountSummary",
+            "services.checkout.checkout-api.CheckoutApi.accountSummary.orders.filter() callback",
+            "services.checkout.checkout-api.accountSummary.orders",
+            "services.checkout.checkout-api.CheckoutApi.accountSummary.cardRefunds.orders.flatMap() callback",
+            "services.checkout.checkout-api.accountSummary.cardRefunds"
+          ]
+        },
+        {
+          "file_path": "services/notifications/notification-service.js",
+          "methods": [
+            "services.notifications.notification-service.NotificationService",
+            "services.notifications.notification-service.NotificationService.sendRefundReceipt",
+            "services.notifications.notification-service.NotificationService.list",
+            "services.notifications.notification-service.NotificationService.list.#messages.map() callback"
+          ]
+        },
+        {
+          "file_path": "services/orders/order-repository.js",
+          "methods": [
+            "services.orders.order-repository.OrderRepository",
+            "services.orders.order-repository.OrderRepository.add",
+            "services.orders.order-repository.OrderRepository.get",
+            "services.orders.order-repository.OrderRepository.recordRefund",
+            "services.orders.order-repository.OrderRepository.list",
+            "services.orders.order-repository.OrderRepository.list.map() callback"
+          ]
+        },
+        {
+          "file_path": "services/payments/card-gateway.js",
+          "methods": [
+            "services.payments.card-gateway.CardGateway",
+            "services.payments.card-gateway.CardGateway.reverseCharge",
+            "services.payments.card-gateway.CardGateway.listReversals",
+            "services.payments.card-gateway.CardGateway.listReversals.map() callback"
+          ]
+        },
+        {
+          "file_path": "services/payments/payment-service.js",
+          "methods": [
+            "services.payments.payment-service.PaymentService",
+            "services.payments.payment-service.PaymentService.constructor",
+            "services.payments.payment-service.PaymentService.refundOriginalPayment",
+            "services.payments.payment-service.PaymentService.refundsForOrder",
+            "services.payments.payment-service.PaymentService.refundsForOrder.filter() callback"
+          ]
+        },
+        {
+          "file_path": "services/refunds/refund-policy.js",
+          "methods": [
+            "services.refunds.refund-policy.RefundPolicy",
+            "services.refunds.refund-policy.RefundPolicy.validate"
+          ]
+        },
+        {
+          "file_path": "services/refunds/refund-service.js",
+          "methods": [
+            "services.refunds.refund-service.RefundService",
+            "services.refunds.refund-service.RefundService.constructor",
+            "services.refunds.refund-service.RefundService.issueRefund"
+          ]
+        }
+      ],
+      "component_id": "1",
+      "can_expand": false,
+      "components": [],
+      "components_relations": []
+    },
+    {
+      "name": "Application Bootstrap and Shared Utilities",
+      "description": "Bootstraps the commerce application environment and provides shared monetary utilities and example runner scripts.",
+      "key_entities": [
+        {
+          "qualified_name": "app.createCommerce",
+          "reference_file": "app.js",
+          "reference_start_line": 12,
+          "reference_end_line": 23
+        },
+        {
+          "qualified_name": "packages.money.money.assertAmount",
+          "reference_file": "packages/money/money.js",
+          "reference_start_line": 1,
+          "reference_end_line": 5
+        },
+        {
+          "qualified_name": "packages.money.money.formatMoney",
+          "reference_file": "packages/money/money.js",
+          "reference_start_line": 7,
+          "reference_end_line": 9
+        }
+      ],
+      "source_cluster_ids": [
+        "0",
+        "4",
+        "5"
+      ],
+      "file_methods": [
+        {
+          "file_path": "app.js",
+          "methods": [
+            "app.createCommerce"
+          ]
+        },
+        {
+          "file_path": "packages/money/money.js",
+          "methods": [
+            "packages.money.money.assertAmount",
+            "packages.money.money.formatMoney"
+          ]
+        }
+      ],
+      "component_id": "2",
+      "can_expand": false,
+      "components": [],
+      "components_relations": []
+    },
+    {
+      "name": "Commerce Applications",
+      "description": "Provides user- and backoffice-facing client applications including storefront accounts, support consoles, and finance exports.",
+      "key_entities": [
+        {
+          "qualified_name": "apps.finance.reconciliation.FinanceExport",
+          "reference_file": "apps/finance/reconciliation.js",
+          "reference_start_line": 1,
+          "reference_end_line": 10
+        },
+        {
+          "qualified_name": "apps.storefront.account-page.StorefrontAccount",
+          "reference_file": "apps/storefront/account-page.js",
+          "reference_start_line": 4,
+          "reference_end_line": 15
+        },
+        {
+          "qualified_name": "apps.support.refund-console.SupportConsole",
+          "reference_file": "apps/support/refund-console.js",
+          "reference_start_line": 1,
+          "reference_end_line": 7
+        }
+      ],
+      "source_cluster_ids": [
+        "1",
+        "2",
+        "3"
+      ],
+      "file_methods": [
+        {
+          "file_path": "apps/finance/reconciliation.js",
+          "methods": [
+            "apps.finance.reconciliation.FinanceExport",
+            "apps.finance.reconciliation.FinanceExport.constructor",
+            "apps.finance.reconciliation.FinanceExport.reconcile",
+            "apps.finance.reconciliation.FinanceExport.reconcile.map() callback",
+            "apps.finance.reconciliation.FinanceExport.reconcile.map() callback.cardAmount",
+            "apps.finance.reconciliation.FinanceExport.reconcile.map() callback.cardAmount.reduce() callback"
+          ]
+        },
+        {
+          "file_path": "apps/storefront/account-page.js",
+          "methods": [
+            "apps.storefront.account-page.StorefrontAccount",
+            "apps.storefront.account-page.StorefrontAccount.constructor",
+            "apps.storefront.account-page.StorefrontAccount.refundOrder",
+            "apps.storefront.account-page.StorefrontAccount.renderBalance"
+          ]
+        },
+        {
+          "file_path": "apps/support/refund-console.js",
+          "methods": [
+            "apps.support.refund-console.SupportConsole",
+            "apps.support.refund-console.SupportConsole.constructor",
+            "apps.support.refund-console.SupportConsole.issueGoodwillRefund"
+          ]
+        }
+      ],
+      "component_id": "3",
+      "can_expand": false,
+      "components": [],
+      "components_relations": []
+    }
+  ],
+  "components_relations": [
+    {
+      "relation": "formats and validates monetary amounts with",
+      "src_name": "Core Commerce Services",
+      "dst_name": "Application Bootstrap and Shared Utilities",
+      "evidence": "",
+      "key_edges": [
+        {
+          "source": "services/notifications/notification-service.js|services.notifications.notification-service.NotificationService.sendRefundReceipt",
+          "target": "packages/money/money.js|packages.money.money.formatMoney",
+          "call_sites": [
+            {
+              "line": 10,
+              "column": 16
+            }
+          ],
+          "description": "Notification and payment services validate and format monetary amounts using shared money helpers."
+        }
+      ],
+      "src_id": "1",
+      "dst_id": "2",
+      "is_static": true,
+      "all_edges": [
+        {
+          "source": "services/notifications/notification-service.js|services.notifications.notification-service.NotificationService.sendRefundReceipt",
+          "target": "packages/money/money.js|packages.money.money.formatMoney",
+          "call_sites": [
+            {
+              "line": 10,
+              "column": 16
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "services/payments/card-gateway.js|services.payments.card-gateway.CardGateway.reverseCharge",
+          "target": "packages/money/money.js|packages.money.money.assertAmount",
+          "call_sites": [
+            {
+              "line": 8,
+              "column": 5
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "services/refunds/refund-policy.js|services.refunds.refund-policy.RefundPolicy.validate",
+          "target": "packages/money/money.js|packages.money.money.assertAmount",
+          "call_sites": [
+            {
+              "line": 5,
+              "column": 5
+            }
+          ],
+          "description": ""
+        }
+      ]
+    },
+    {
+      "relation": "instantiates and configures domain services",
+      "src_name": "Application Bootstrap and Shared Utilities",
+      "dst_name": "Core Commerce Services",
+      "evidence": "",
+      "key_edges": [
+        {
+          "source": "app.js|app.createCommerce",
+          "target": "services/checkout/checkout-api.js|services.checkout.checkout-api.CheckoutApi",
+          "call_sites": [
+            {
+              "line": 18,
+              "column": 24
+            }
+          ],
+          "description": "createCommerce constructs and wires order, payment, refund, notification, and checkout services."
+        }
+      ],
+      "src_id": "2",
+      "dst_id": "1",
+      "is_static": true,
+      "all_edges": [
+        {
+          "source": "app.js|app.createCommerce",
+          "target": "services/checkout/checkout-api.js|services.checkout.checkout-api.CheckoutApi",
+          "call_sites": [
+            {
+              "line": 18,
+              "column": 24
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "app.js|app.createCommerce",
+          "target": "services/checkout/checkout-api.js|services.checkout.checkout-api.CheckoutApi.constructor",
+          "call_sites": [
+            {
+              "line": 18,
+              "column": 24
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "app.js|app.createCommerce",
+          "target": "services/notifications/notification-service.js|services.notifications.notification-service.NotificationService",
+          "call_sites": [
+            {
+              "line": 16,
+              "column": 29
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "app.js|app.createCommerce",
+          "target": "services/orders/order-repository.js|services.orders.order-repository.OrderRepository",
+          "call_sites": [
+            {
+              "line": 13,
+              "column": 22
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "app.js|app.createCommerce",
+          "target": "services/payments/card-gateway.js|services.payments.card-gateway.CardGateway",
+          "call_sites": [
+            {
+              "line": 14,
+              "column": 27
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "app.js|app.createCommerce",
+          "target": "services/payments/payment-service.js|services.payments.payment-service.PaymentService",
+          "call_sites": [
+            {
+              "line": 15,
+              "column": 24
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "app.js|app.createCommerce",
+          "target": "services/payments/payment-service.js|services.payments.payment-service.PaymentService.constructor",
+          "call_sites": [
+            {
+              "line": 15,
+              "column": 24
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "app.js|app.createCommerce",
+          "target": "services/refunds/refund-policy.js|services.refunds.refund-policy.RefundPolicy",
+          "call_sites": [
+            {
+              "line": 17,
+              "column": 59
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "app.js|app.createCommerce",
+          "target": "services/refunds/refund-service.js|services.refunds.refund-service.RefundService",
+          "call_sites": [
+            {
+              "line": 17,
+              "column": 23
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "app.js|app.createCommerce",
+          "target": "services/refunds/refund-service.js|services.refunds.refund-service.RefundService.constructor",
+          "call_sites": [
+            {
+              "line": 17,
+              "column": 23
+            }
+          ],
+          "description": ""
+        }
+      ]
+    },
+    {
+      "relation": "instantiates client applications",
+      "src_name": "Application Bootstrap and Shared Utilities",
+      "dst_name": "Commerce Applications",
+      "evidence": "",
+      "key_edges": [
+        {
+          "source": "app.js|app.createCommerce",
+          "target": "apps/storefront/account-page.js|apps.storefront.account-page.StorefrontAccount",
+          "call_sites": [
+            {
+              "line": 19,
+              "column": 26
+            }
+          ],
+          "description": "createCommerce instantiates finance, storefront, and support client application interfaces."
+        }
+      ],
+      "src_id": "2",
+      "dst_id": "3",
+      "is_static": true,
+      "all_edges": [
+        {
+          "source": "app.js|app.createCommerce",
+          "target": "apps/finance/reconciliation.js|apps.finance.reconciliation.FinanceExport",
+          "call_sites": [
+            {
+              "line": 21,
+              "column": 23
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "app.js|app.createCommerce",
+          "target": "apps/finance/reconciliation.js|apps.finance.reconciliation.FinanceExport.constructor",
+          "call_sites": [
+            {
+              "line": 21,
+              "column": 23
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "app.js|app.createCommerce",
+          "target": "apps/storefront/account-page.js|apps.storefront.account-page.StorefrontAccount",
+          "call_sites": [
+            {
+              "line": 19,
+              "column": 26
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "app.js|app.createCommerce",
+          "target": "apps/storefront/account-page.js|apps.storefront.account-page.StorefrontAccount.constructor",
+          "call_sites": [
+            {
+              "line": 19,
+              "column": 26
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "app.js|app.createCommerce",
+          "target": "apps/support/refund-console.js|apps.support.refund-console.SupportConsole",
+          "call_sites": [
+            {
+              "line": 20,
+              "column": 23
+            }
+          ],
+          "description": ""
+        },
+        {
+          "source": "app.js|app.createCommerce",
+          "target": "apps/support/refund-console.js|apps.support.refund-console.SupportConsole.constructor",
+          "call_sites": [
+            {
+              "line": 20,
+              "column": 23
+            }
+          ],
+          "description": ""
+        }
+      ]
+    },
+    {
+      "relation": "formats display amounts using",
+      "src_name": "Commerce Applications",
+      "dst_name": "Application Bootstrap and Shared Utilities",
+      "evidence": "",
+      "key_edges": [
+        {
+          "source": "apps/storefront/account-page.js|apps.storefront.account-page.StorefrontAccount.renderBalance",
+          "target": "packages/money/money.js|packages.money.money.formatMoney",
+          "call_sites": [
+            {
+              "line": 13,
+              "column": 29
+            }
+          ],
+          "description": "Account page renders user balance using money formatting helpers."
+        }
+      ],
+      "src_id": "3",
+      "dst_id": "2",
+      "is_static": true,
+      "all_edges": [
+        {
+          "source": "apps/storefront/account-page.js|apps.storefront.account-page.StorefrontAccount.renderBalance",
+          "target": "packages/money/money.js|packages.money.money.formatMoney",
+          "call_sites": [
+            {
+              "line": 13,
+              "column": 29
+            }
+          ],
+          "description": ""
+        }
+      ]
+    }
+  ]
+}

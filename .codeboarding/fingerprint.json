@@ -1,0 +1,19 @@
+{
+  "files": {
+    "README.md": "fc95e319be0a1a41",
+    "app.js": "6f1618cef74bc375",
+    "package.json": "5d505d3505bed3e8",
+    "apps/storefront/account-page.js": "4fc987669c117ddb",
+    "apps/finance/reconciliation.js": "7cf92e406d2f1e43",
+    "apps/support/refund-console.js": "41da3190ae226ef5",
+    "services/notifications/notification-service.js": "f6611b765ce0ea80",
+    "services/refunds/refund-policy.js": "3deb3e88029b242e",
+    "services/refunds/refund-service.js": "9bfe80b47e187e17",
+    "services/checkout/checkout-api.js": "ae2dc8c3c6cb4015",
+    "services/orders/order-repository.js": "cc129582085652a9",
+    "services/payments/card-gateway.js": "43e906b69e2a8a63",
+    "services/payments/payment-service.js": "5ef8703a4d1138d7",
+    "scripts/refund-example.js": "9627ac97912997c1",
+    "packages/money/money.js": "8405beff368285ed"
+  }
+}
