@@ -1,0 +1,9 @@
+{
+  "name": "fern-bank-commerce-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Executable synthetic commerce system for a CodeBoarding architecture review demo",
+  "scripts": { "test": "node --test", "demo": "node scripts/refund-example.js" },
+  "engines": { "node": ">=22" }
+}
