@@ -1,8 +1,8 @@
 export class RefundService {
   #requests = new Map();
 
-  constructor(orders, payments, policy, notifications) {
-    Object.assign(this, { orders, payments, policy, notifications });
+  constructor(orders, ledger, policy, notifications) {
+    Object.assign(this, { orders, ledger, policy, notifications });
   }
 
   issueRefund({ orderId, amount, requestId }) {
@@ -14,8 +14,8 @@ export class RefundService {
     }
     const order = this.orders.get(orderId);
     this.policy.validate(order, amount);
-    const paymentRefund = this.payments.refundOriginalPayment(order, amount, requestId);
-    const refund = { ...paymentRefund, orderId, customerId: order.customerId, status: 'completed' };
+    const ledgerEntry = this.ledger.creditRefund(order, amount, requestId);
+    const refund = { ...ledgerEntry, orderId, customerId: order.customerId, status: 'completed' };
     this.orders.recordRefund(orderId, refund);
     this.notifications.sendRefundReceipt(refund);
     this.#requests.set(requestId, refund);

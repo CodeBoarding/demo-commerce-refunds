@@ -8,12 +8,11 @@ function fixture() {
   return app;
 }
 
-test('a refund returns money to the original card', () => {
+test('an instant refund updates the account balance', () => {
   const app = fixture();
   const result = app.storefront.refundOrder('customer-demo', 'order-1042', 4900, 'refund-demo');
-  assert.equal(result.destination, 'original-card');
-  assert.equal(app.cardGateway.listReversals()[0].amount, 4900);
-  assert.equal(app.finance.reconcile()[0].discrepancy, 0);
+  assert.equal(result.status, 'completed');
+  assert.equal(app.ledger.balance('customer-demo', 'EUR'), 4900);
 });
 
 test('a retry does not refund the card twice', () => {

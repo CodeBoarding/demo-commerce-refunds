@@ -8,16 +8,18 @@ import { CheckoutApi } from './services/checkout/checkout-api.js';
 import { StorefrontAccount } from './apps/storefront/account-page.js';
 import { SupportConsole } from './apps/support/refund-console.js';
 import { FinanceExport } from './apps/finance/reconciliation.js';
+import { createLedger } from './services/ledger/create-ledger.js';
 
 export function createCommerce() {
   const orders = new OrderRepository();
   const cardGateway = new CardGateway();
-  const payments = new PaymentService(cardGateway);
+  const ledger = createLedger();
+  const payments = new PaymentService(cardGateway, ledger);
   const notifications = new NotificationService();
-  const refunds = new RefundService(orders, payments, new RefundPolicy(), notifications);
-  const checkout = new CheckoutApi(orders, refunds, payments);
-  const storefront = new StorefrontAccount(checkout);
+  const refunds = new RefundService(orders, ledger, new RefundPolicy(), notifications);
+  const checkout = new CheckoutApi(orders, refunds, payments, ledger);
+  const storefront = new StorefrontAccount(checkout, ledger);
   const support = new SupportConsole(refunds);
   const finance = new FinanceExport(orders, payments);
-  return { orders, cardGateway, payments, notifications, refunds, checkout, storefront, support, finance };
+  return { orders, cardGateway, payments, notifications, refunds, checkout, storefront, support, finance, ledger };
 }
