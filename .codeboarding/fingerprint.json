@@ -1,19 +1,19 @@
 {
   "files": {
     "README.md": "fc95e319be0a1a41",
-    "app.js": "6f1618cef74bc375",
+    "app.js": "26b6d48c8d164a85",
     "package.json": "5d505d3505bed3e8",
-    "apps/storefront/account-page.js": "4fc987669c117ddb",
-    "apps/finance/reconciliation.js": "7cf92e406d2f1e43",
-    "apps/support/refund-console.js": "41da3190ae226ef5",
-    "services/notifications/notification-service.js": "f6611b765ce0ea80",
-    "services/refunds/refund-policy.js": "3deb3e88029b242e",
-    "services/refunds/refund-service.js": "9bfe80b47e187e17",
-    "services/checkout/checkout-api.js": "ae2dc8c3c6cb4015",
-    "services/orders/order-repository.js": "cc129582085652a9",
-    "services/payments/card-gateway.js": "43e906b69e2a8a63",
-    "services/payments/payment-service.js": "5ef8703a4d1138d7",
+    "shared/money.js": "8405beff368285ed",
+    "notifications/notification-service.js": "7455b168972373f2",
+    "refunds/refund-policy.js": "48b13119aa06f601",
+    "refunds/refund-service.js": "74e0696537b8daa7",
+    "storefront/account-page.js": "c3e6842a947af6fa",
+    "checkout/checkout-api.js": "7309f7ee844696ef",
+    "finance/reconciliation.js": "00f221eb1f485cfc",
+    "orders/order-repository.js": "cc129582085652a9",
     "scripts/refund-example.js": "9627ac97912997c1",
-    "packages/money/money.js": "8405beff368285ed"
+    "support/refund-console.js": "2cf121cc8fb017d5",
+    "payments/card-gateway.js": "e684b7f275c03ba1",
+    "payments/payment-service.js": "433e97e3e7c5fc8b"
   }
 }
