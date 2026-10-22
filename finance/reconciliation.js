@@ -1,5 +1,11 @@
+import { OrderRepository } from '../orders/order-repository.js';
+import { PaymentService } from '../payments/payment-service.js';
+
 export class FinanceExport {
-  constructor(orders, payments) { Object.assign(this, { orders, payments }); }
+  constructor(orders = new OrderRepository(), payments = new PaymentService()) {
+    this.orders = orders;
+    this.payments = payments;
+  }
 
   reconcile() {
     return this.orders.list().map(order => {

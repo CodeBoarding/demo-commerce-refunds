@@ -1,4 +1,4 @@
-import { assertAmount } from '../../packages/money/money.js';
+import { assertAmount } from '../shared/money.js';
 
 export class RefundPolicy {
   validate(order, amount) {

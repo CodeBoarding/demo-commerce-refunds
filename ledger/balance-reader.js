@@ -1,5 +1,7 @@
+import { LedgerEntryRepository } from './entry-repository.js';
+
 export class LedgerBalanceReader {
-  constructor(entries) { this.entries = entries; }
+  constructor(entries = new LedgerEntryRepository()) { this.entries = entries; }
 
   availableCredit(accountId) {
     return this.entries.forAccount(accountId)

@@ -1,5 +1,15 @@
+import { createLedger } from '../ledger/create-ledger.js';
+import { OrderRepository } from '../orders/order-repository.js';
+import { RefundService } from '../refunds/refund-service.js';
+import { PaymentService } from '../payments/payment-service.js';
+
 export class CheckoutApi {
-  constructor(orders, refunds, payments, ledger) { Object.assign(this, { orders, refunds, payments, ledger }); }
+  constructor(orders = new OrderRepository(), refunds = new RefundService(), payments = new PaymentService(), ledger = createLedger()) {
+    this.orders = orders;
+    this.refunds = refunds;
+    this.payments = payments;
+    this.ledger = ledger;
+  }
 
   requestRefund(customerId, request) {
     const order = this.orders.get(request.orderId);

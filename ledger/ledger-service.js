@@ -1,8 +1,17 @@
-import { assertAmount } from '../../packages/money/money.js';
+import { LedgerAccountRepository } from './account-repository.js';
+import { LedgerEntryRepository } from './entry-repository.js';
+import { LedgerBalanceReader } from './balance-reader.js';
+import { LedgerOutbox } from './outbox.js';
+import { assertAmount } from '../shared/money.js';
 
 /** Posts commerce money events and exposes customers' available store credit. */
 export class LedgerService {
-  constructor(accounts, entries, balances, outbox) { Object.assign(this, { accounts, entries, balances, outbox }); }
+  constructor(accounts = new LedgerAccountRepository(), entries = new LedgerEntryRepository(), balances = new LedgerBalanceReader(entries), outbox = new LedgerOutbox()) {
+    this.accounts = accounts;
+    this.entries = entries;
+    this.balances = balances;
+    this.outbox = outbox;
+  }
 
   creditRefund(order, amount, requestId) {
     assertAmount(amount, order.currency);

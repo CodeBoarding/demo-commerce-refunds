@@ -1,5 +1,11 @@
+import { createLedger } from '../ledger/create-ledger.js';
+import { CardGateway } from './card-gateway.js';
+
 export class PaymentService {
-  constructor(cardGateway, ledger) { Object.assign(this, { cardGateway, ledger }); }
+  constructor(cardGateway = new CardGateway(), ledger = createLedger()) {
+    this.cardGateway = cardGateway;
+    this.ledger = ledger;
+  }
 
   recordSettlement(order, requestId) {
     return this.ledger.recordSettlement(order, requestId);

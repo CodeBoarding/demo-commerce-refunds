@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { createLedger } from '../services/ledger/create-ledger.js';
+import { createLedger } from '../ledger/create-ledger.js';
 
 const order = { id: 'order-1042', customerId: 'customer-demo', paidAmount: 12900, currency: 'EUR' };
 

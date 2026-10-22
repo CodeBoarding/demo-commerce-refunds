@@ -1,8 +1,16 @@
+import { OrderRepository } from '../orders/order-repository.js';
+import { createLedger } from '../ledger/create-ledger.js';
+import { RefundPolicy } from './refund-policy.js';
+import { NotificationService } from '../notifications/notification-service.js';
+
 export class RefundService {
   #requests = new Map();
 
-  constructor(orders, ledger, policy, notifications) {
-    Object.assign(this, { orders, ledger, policy, notifications });
+  constructor(orders = new OrderRepository(), ledger = createLedger(), policy = new RefundPolicy(), notifications = new NotificationService()) {
+    this.orders = orders;
+    this.ledger = ledger;
+    this.policy = policy;
+    this.notifications = notifications;
   }
 
   issueRefund({ orderId, amount, requestId }) {
