@@ -1,4 +1,4 @@
-import { formatMoney } from '../../packages/money/money.js';
+import { formatMoney } from '../shared/money.js';
 
 export class NotificationService {
   #messages = [];

@@ -1,4 +1,4 @@
-import { assertAmount } from '../../packages/money/money.js';
+import { assertAmount } from '../shared/money.js';
 
 /** Local stand-in for the external card network. No network requests are made. */
 export class CardGateway {

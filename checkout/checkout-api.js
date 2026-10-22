@@ -1,5 +1,13 @@
+import { OrderRepository } from '../orders/order-repository.js';
+import { RefundService } from '../refunds/refund-service.js';
+import { PaymentService } from '../payments/payment-service.js';
+
 export class CheckoutApi {
-  constructor(orders, refunds, payments) { Object.assign(this, { orders, refunds, payments }); }
+  constructor(orders = new OrderRepository(), refunds = new RefundService(), payments = new PaymentService()) {
+    this.orders = orders;
+    this.refunds = refunds;
+    this.payments = payments;
+  }
 
   requestRefund(customerId, request) {
     const order = this.orders.get(request.orderId);

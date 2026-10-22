@@ -1,13 +1,13 @@
-import { OrderRepository } from './services/orders/order-repository.js';
-import { CardGateway } from './services/payments/card-gateway.js';
-import { PaymentService } from './services/payments/payment-service.js';
-import { RefundPolicy } from './services/refunds/refund-policy.js';
-import { RefundService } from './services/refunds/refund-service.js';
-import { NotificationService } from './services/notifications/notification-service.js';
-import { CheckoutApi } from './services/checkout/checkout-api.js';
-import { StorefrontAccount } from './apps/storefront/account-page.js';
-import { SupportConsole } from './apps/support/refund-console.js';
-import { FinanceExport } from './apps/finance/reconciliation.js';
+import { OrderRepository } from './orders/order-repository.js';
+import { CardGateway } from './payments/card-gateway.js';
+import { PaymentService } from './payments/payment-service.js';
+import { RefundPolicy } from './refunds/refund-policy.js';
+import { RefundService } from './refunds/refund-service.js';
+import { NotificationService } from './notifications/notification-service.js';
+import { CheckoutApi } from './checkout/checkout-api.js';
+import { StorefrontAccount } from './storefront/account-page.js';
+import { SupportConsole } from './support/refund-console.js';
+import { FinanceExport } from './finance/reconciliation.js';
 
 export function createCommerce() {
   const orders = new OrderRepository();
