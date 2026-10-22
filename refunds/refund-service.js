@@ -1,14 +1,14 @@
 import { OrderRepository } from '../orders/order-repository.js';
-import { PaymentService } from '../payments/payment-service.js';
+import { createLedger } from '../ledger/create-ledger.js';
 import { RefundPolicy } from './refund-policy.js';
 import { NotificationService } from '../notifications/notification-service.js';
 
 export class RefundService {
   #requests = new Map();
 
-  constructor(orders = new OrderRepository(), payments = new PaymentService(), policy = new RefundPolicy(), notifications = new NotificationService()) {
+  constructor(orders = new OrderRepository(), ledger = createLedger(), policy = new RefundPolicy(), notifications = new NotificationService()) {
     this.orders = orders;
-    this.payments = payments;
+    this.ledger = ledger;
     this.policy = policy;
     this.notifications = notifications;
   }
@@ -22,8 +22,8 @@ export class RefundService {
     }
     const order = this.orders.get(orderId);
     this.policy.validate(order, amount);
-    const paymentRefund = this.payments.refundOriginalPayment(order, amount, requestId);
-    const refund = { ...paymentRefund, orderId, customerId: order.customerId, status: 'completed' };
+    const ledgerEntry = this.ledger.creditRefund(order, amount, requestId);
+    const refund = { ...ledgerEntry, orderId, customerId: order.customerId, status: 'completed' };
     this.orders.recordRefund(orderId, refund);
     this.notifications.sendRefundReceipt(refund);
     this.#requests.set(requestId, refund);
